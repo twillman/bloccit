@@ -1,3 +1,6 @@
+## Bloccit: a Reddit replica to teach the fundamentals of web development and Rails.
+
+Made with my mentor at [Bloc](http://bloc.io)
 == README
 
 This README would normally document whatever steps are necessary to get the
@@ -26,4 +29,3 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
-# bloccit
