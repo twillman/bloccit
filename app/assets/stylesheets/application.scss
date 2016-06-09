@@ -18,8 +18,19 @@
 
 .user-info {
   margin-top: 9px;
+  text-align: right;
 }
 
 .nav {
   margin-top: 5px;
+}
+
+.avatar{
+  vertical-align: middle;
+  padding-left: 5px;
+  width: 25%
+}
+
+.signout{
+  width: 75%;
 }
