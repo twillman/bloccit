@@ -12,6 +12,8 @@ RSpec.describe Post, type: :model do
 
   let(:post) {topic.posts.create!(title: title, body: body, user: user)}
 
+  it {is_expected.to have_many(:comments)}
+
   it {is_expected.to belong_to(:topic)}
   it {is_expected.to belong_to(:user)}
 
@@ -22,7 +24,7 @@ RSpec.describe Post, type: :model do
 
   it {is_expected.to validate_length_of(:title).is_at_least(5)}
   it {is_expected.to validate_length_of(:body).is_at_least(20)}
-  
+
   describe "attributes" do
     it "has title, body, and user attribute" do
       expect(post).to have_attributes(title: title, body: body, user: user)
