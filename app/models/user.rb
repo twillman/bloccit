@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
 
   enum role: [:member, :admin]
 
+  def has_posts_or_comments
+    (self.posts.count > 0) || (self.comments.count > 0)
+  end
+
   def favorite_for(post)
     favorites.where(post_id: post.id).first
   end

@@ -4,8 +4,8 @@ RSpec.describe Label, type: :model do
   let(:topic) {create(:topic)}
   let(:user) {creat(:user)}
   let(:post) { create(:post)}
-  let(:label) {Label.create!(name: "Label")}
-  let(:label2) {Label.create!(name: "Label2")}
+  let(:label) {create(:label)}
+  let(:label2) {create(:label)}
 
   it {is_expected.to have_many :labelings}
   it {is_expected.to have_many(:topics).through(:labelings)}
@@ -25,7 +25,9 @@ RSpec.describe Label, type: :model do
     it "takes a comma delimited string and returns an array of Labels" do
       labels = "#{label.name}, #{label2.name}"
       labels_as_a = [label, label2]
-      expect(Label.update_labels(labels)).to eq(labels_as_a)
+
+      new_labels = Label.update_labels(labels)
+      expect(new_labels).to eq(labels_as_a)
     end
   end
 end

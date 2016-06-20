@@ -9,4 +9,5 @@ class Label < ActiveRecord::Base
       Label.find_or_create_by(name: label.strip)
     end
   end
+
 end
