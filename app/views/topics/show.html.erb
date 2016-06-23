@@ -14,7 +14,7 @@
     </p>
     <% @topic.posts.each do |post| %>
     <div class = "media">
-      <span class  = "topic-show-point-count">
+      <span id="<%= post.id %>" class = "topic-show-point-count">
         <%= render partial: 'votes/voter', locals: { post: post} %>
       </span>
       <div class = "media-body">
